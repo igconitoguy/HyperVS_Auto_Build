@@ -42,6 +42,13 @@ on:
         required: false
         default: ""
 
+# Notification secrets (repo Settings > Secrets > Actions); bin/push*.py read them.
+env:
+  TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+  VS_NOTIFICATION_SECRET: ${{ secrets.VS_NOTIFICATION_SECRET }}
+  # OTA zip secret v3 (bin/ota_keys/zip_secret_v3 is not committed)
+  VS_OTA_ZIP_SECRET_V3: ${{ secrets.VS_OTA_ZIP_SECRET_V3 }}
+
 jobs:
   Auth:
     runs-on: ubuntu-latest
